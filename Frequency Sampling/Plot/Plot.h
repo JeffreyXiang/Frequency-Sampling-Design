@@ -13,6 +13,13 @@ class Plot
 	public:
 		enum ERROR { FONT_NOT_SET };
 
+		//窗口区域
+		typedef struct
+		{
+			double yMin;
+			double yMax;
+		} Range;
+
 		//图表上的文字标签
 		typedef struct
 		{
@@ -55,24 +62,30 @@ class Plot
 		Color rulerColor;			//标尺颜色
 		Font* rulerFont;			//标尺字体
 		double rulerHeight;			//标尺字体高度
-		bool verScaleEnabled;		//显示刻度
-		bool horScaleEnabled;
+
+		Range range;
+
+		bool autoRangeEnabled;	    //自动缩放
+		bool verMarkEnabled;		//显示刻度
+		bool horMarkEnabled;
 		bool verNumberEnabled;		//显示数字
 		bool horNumberEnabled;
 
 		Font* defFont;				//默认字体
 
-		void plotRaw(Image& image, vector<Discrete> data, int points, double xMin, double xMax, int flag);
+		void plotRaw(Image& image, vector<Discrete> data, int points, double xMin, double xMax, bool isDiscrete);
 
 	public:
 		Plot() :
-			width(defWidth), height(defHeight), defFont(NULL),
+			width(defWidth), height(defHeight), 
+			range({ 0, 0 }), defFont(NULL),
 			title({ NULL, { 0, 0, 0 }, NULL, defTitleH }),
 			verName({ NULL, { 0, 0, 0 }, NULL, defNameH }),
 			horName({ NULL, { 0, 0, 0 }, NULL, defNameH }),
 			rulerColor(0, 0, 0), rulerHeight(defNumberH), rulerFont(NULL),
-			verScaleEnabled(true), horScaleEnabled(true),
-			verNumberEnabled(true), horNumberEnabled(true) {}
+			verMarkEnabled(true), horMarkEnabled(true),
+			verNumberEnabled(true), horNumberEnabled(true),
+			autoRangeEnabled(true) {}
 
 		~Plot() {}
 
@@ -98,11 +111,18 @@ class Plot
 		void setRuler(Color color = { 0, 0, 0 }, double height = defNumberH, Font* font = NULL)
 		{ rulerColor = color; rulerHeight = height; rulerFont = font; }
 
+		//设置自动缩放
+		void setAutoRangeEnabled(bool enabled) { autoRangeEnabled = enabled; }
+
+		//设置纵轴范围
+		void setRange(Range range) { this->range = range; }
+		void setRange(double min, double max) { range = { min, max }; }
+
 		//设置纵轴刻度显示
-		void setVerScaleEnabled(bool enabled) { verScaleEnabled = enabled; }
+		void setVerMarkEnabled(bool enabled) { verMarkEnabled = enabled; }
 
 		//设置横轴刻度显示
-		void setHorScaleEnabled(bool enabled) { horScaleEnabled = enabled; }
+		void setHorMarkEnabled(bool enabled) { horMarkEnabled = enabled; }
 
 		//设置纵轴数字显示
 		void setVerNumberEnabled(bool enabled) { verNumberEnabled = enabled; }

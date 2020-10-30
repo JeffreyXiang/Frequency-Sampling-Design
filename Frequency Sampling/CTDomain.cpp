@@ -20,7 +20,7 @@ Image CTDomain::plotAmplitude(Plot& plot)
     plot.setTitle("C-T Amplitude");
     
     return plot.plot(data->front().index, data->back().index, 4097, {
-        { [this](double t) {return abs(this->getValue(t));}, 0x007fbf, 3 },
+        { [this](double t) {return abs(this->getValue(t));}, 0x007fbf, 2 },
         });
 }
 
@@ -31,6 +31,6 @@ Image CTDomain::plotPhase(Plot& plot)
     plot.setTitle("C-T Phase");
 
     return plot.plot(data->front().index, data->back().index, 4097, {
-        { [this](double t) {return arg(this->getValue(t));}, 0x007fbf, 3 },
+        { [this](double t) {return arg(this->getValue(t));}, 0x007fbf, 2 },
         });
 }

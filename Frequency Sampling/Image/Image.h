@@ -12,10 +12,19 @@ class Image
         //采样方法：（临近，双线性，双三次，LANCZOS）
         enum resampling {NEAREST, BILINEAR, BICUBIC, LANCZOS};
 
+        typedef struct
+        {
+            uint32_t xMin;
+            uint32_t yMin;
+            uint32_t xMax;
+            uint32_t yMax;
+        }Zone;
+
     private:
         Color* data;
         uint32_t width;
         uint32_t height;
+        Zone drawZone;
 
         //卷积核
         typedef struct
@@ -54,7 +63,7 @@ class Image
         Color resample(double x, double y, double kx, double ky, resampling type);
 
     public:
-        Image() : width(0), height(0), data(NULL) {}
+        Image() : width(0), height(0), drawZone({0, 0, 0, 0}), data(NULL) {}
 
         //构造函数，以图像的宽度与高度（以像素计）创建对象
         Image(uint32_t width, uint32_t height);
@@ -71,6 +80,13 @@ class Image
 
         int getHeight() { return height; }
         int getWidth() { return width; }
+
+        //设置绘制区域
+        void setDrawZone(Zone zone);
+        void setDrawZone(uint32_t xMin, uint32_t yMin, uint32_t xMax, uint32_t yMax);
+
+        //获取绘制区域
+        Zone getDrawZone();
 
         //设置背景
         void setBackgroundColor(Color color);

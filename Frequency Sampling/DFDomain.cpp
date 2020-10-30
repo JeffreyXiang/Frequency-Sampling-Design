@@ -76,7 +76,7 @@ Image DFDomain::plotAmplitude(Plot& plot)
         buffer[i] = abs(data->at(i));
 
     Image res = plot.plot(data->size(), {
-        { buffer, 0x007fbf, 3 },
+        { buffer, 0x007fbf, 2 },
         });
 
     delete[] buffer;
@@ -95,7 +95,7 @@ Image DFDomain::plotPhase(Plot& plot)
         buffer[i] = arg(data->at(i));
 
     Image res = plot.plot(data->size(), {
-        { buffer, 0x007fbf, 3 },
+        { buffer, 0x007fbf, 2 },
         });
 
     delete[] buffer;

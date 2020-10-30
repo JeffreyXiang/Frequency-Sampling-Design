@@ -69,6 +69,7 @@ Image::Image(uint32_t width, uint32_t height)
 {
     this->width = width;
     this->height = height;
+    drawZone = { 0, 0, width - 1, height - 1 };
     data = new Color[width * height];
     for (int i = 0; i < width * height; i++)
         data[i].rgba(0, 0, 0, 0);
@@ -77,6 +78,8 @@ Image::Image(uint32_t width, uint32_t height)
 //生成文字原图（一一对应）
 Image::Image(string str, Font& font, Color color)
 {
+    drawZone = { 0, 0, 0, 0 };
+
     //计算文字宽高
     width = font.stringWidth(str);
     height = font.getHeight();
@@ -102,6 +105,7 @@ Image::Image(Image& I)
 {
     width = I.width;
     height = I.height;
+    drawZone = I.drawZone;
     data = new Color[width * height];
     for (int i = 0; i < width * height; i++)
         data[i] = I.data[i];
@@ -111,6 +115,7 @@ Image::Image(Image&& I)
 {
     width = I.width;
     height = I.height;
+    drawZone = I.drawZone;
     data = I.data;
     I.data = NULL;
 }
@@ -125,6 +130,7 @@ Image& Image::operator=(Image& I)
     delete[] data;
     width = I.width;
     height = I.height;
+    drawZone = I.drawZone;
     data = new Color[width * height];
     for (int i = 0; i < width * height; i++)
         data[i] = I.data[i];
@@ -136,9 +142,25 @@ Image& Image::operator=(Image&& I)
     delete[] data;
     width = I.width;
     height = I.height;
+    drawZone = I.drawZone;
     data = I.data;
     I.data = NULL;
     return *this;
+}
+
+void Image::setDrawZone(Zone zone)
+{
+    drawZone = zone;
+}
+
+void Image::setDrawZone(uint32_t xMin, uint32_t yMin, uint32_t xMax, uint32_t yMax)
+{
+    setDrawZone({ xMin, yMin, xMax, yMax });
+}
+
+Image::Zone Image::getDrawZone()
+{
+    return drawZone;
 }
 
 void Image::setBackgroundColor(Color color)
@@ -168,10 +190,10 @@ void Image::overliePixel(uint32_t x, uint32_t y, Color color)
 Image& Image::draw(Figure& s)
 {
     Figure::AABBdata b = s.tAABB();
-    int xMin = max((int)floor(b.xMin), 0);
-    int yMin = max((int)floor(b.yMin), 0);
-    int xMax = min((int)ceil(b.xMax), (int)width - 1);
-    int yMax = min((int)ceil(b.yMax), (int)height - 1);
+    int xMin = max((int)floor(b.xMin), (int)drawZone.xMin);
+    int yMin = max((int)floor(b.yMin), (int)drawZone.yMin);
+    int xMax = min((int)ceil(b.xMax), (int)drawZone.xMax);
+    int yMax = min((int)ceil(b.yMax), (int)drawZone.yMax);
     /*for (int u = xMin; u <= xMax; u++)
     {
         setPixel(u, yMin, {0, 255, 0});
