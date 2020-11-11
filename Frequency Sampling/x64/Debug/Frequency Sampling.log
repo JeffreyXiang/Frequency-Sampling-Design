@@ -1,0 +1,64 @@
+﻿  CFDomain.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  CTDomain.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+  DFDomain.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\CTDomain.cpp(8,16): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DFDomain.cpp(5,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DFDomain.cpp(31,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DFDomain.cpp(54,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DFDomain.cpp(80,10): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  DTDomain.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DFDomain.cpp(99,10): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DTDomain.cpp(32,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DTDomain.cpp(49,25): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DTDomain.cpp(76,10): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Figure.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\DTDomain.cpp(95,10): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  main.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Plot.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Image\Image.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Figure\Figure.h(223,43): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(53,19): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(56,20): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(106,50): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(106,41): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(106,32): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(106,23): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(119,19): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(121,20): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(142,19): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(144,20): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(171,78): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(171,63): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(171,48): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+  Vector.cpp
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Plot\Plot.cpp(171,33): warning C4244: “参数”: 从“double”转换到“uint32_t”，可能丢失数据
+  正在生成代码...
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\Vector\Vector.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\CTFunction.inl(18): warning C4715: “CTFunction<std::complex<double> >::getValue”: 不是所有的控件路径都返回值
+D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\Frequency Sampling\CTFunction.inl(18): warning C4715: “CTFunction<std::complex<double> >::getValue”: 不是所有的控件路径都返回值
+  Frequency Sampling.vcxproj -> D:\姜以恒—一些文件\数字信号处理\Experiment\Frequency-Sampling-Design\x64\Debug\Frequency Sampling.exe

@@ -37,3 +37,12 @@ Image CFDomain::plotPhase(Plot& plot)
         { [this](double t) {return arg(this->getValue(t));}, 0x007fbf, 2 },
         });
 }
+
+DTDomain CFDomain::IDTFT()
+{
+	DTDomain dtd;
+	std::complex<double> sum;
+	int N = data->size();
+	//??
+	return dtd;
+}

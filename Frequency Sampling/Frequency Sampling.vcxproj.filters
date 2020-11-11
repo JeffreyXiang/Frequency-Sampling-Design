@@ -98,5 +98,8 @@
     <ClInclude Include="DTDomain.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Windows.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

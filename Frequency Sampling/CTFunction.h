@@ -44,7 +44,7 @@ public:
     void fromFunction(std::function<T(double)> func, double xMin, double xMax, int num = 4097);
 
     //²ÉÑù
-    //DTFunction<T> sample(double Fs);
+    DTFunction<T> sample(double Fs);
 };
 
 #include "CTFunction.inl"

@@ -160,6 +160,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Plot\Plot.cpp" />
     <ClCompile Include="Vector\Vector.cpp" />
+    <ClInclude Include="Windows.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Color\Color.h" />
