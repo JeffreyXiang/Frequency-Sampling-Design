@@ -1,41 +1,31 @@
-#include "DFDomain.h"
-#include "DTDomain.h"
+#include "Signals/Signals.h"
+#include "Designer/Designer.h"
 #include "Plot.h"
 #include <complex>
 
 int main()
 {
-    Plot App;
+    Plot plot;
     Font font("../Data/DengXian_ASCII_128x.bin", 128);
+    Designer designer;
 
-    App.setSize(1500, 1000);
-    App.setDefaultFont(font);
-    App.setRuler(0x000000, 24);
-    App.setHorName("Time(s)", 0x000000, 32);
-    App.setVerName("Amplitude(V)", 0x000000, 32);
-    App.setTitle("Signal", 0x000000, 48);
-
-    auto func = [](double x) {return x < 0.5 * PI ? 1 : 0;};
+    plot.setSize(1500, 1000);
+    plot.setDefaultFont(font);
+    plot.setRuler(0x000000, 24);
+    plot.setHorName("Time(s)", 0x000000, 32);
+    plot.setVerName("Amplitude(V)", 0x000000, 32);
+    plot.setTitle("Signal", 0x000000, 48);
     
-    CTDomain CTSignal;
-    DTDomain DTSignal;
-    CFDomain CFSignal;
-    DFDomain DFSignal;
-    CFSignal.fromFunction(func, 0, 2 * PI);
-    DFSignal = CFSignal.sample(64);
-    DFSignal.getData()[15] = 0.9;
-    DFSignal.getData()[16] = 0.5;
-    DFSignal.getData()[17] = 0.1;
-    DFSignal.linearPhase();
-    CFSignal = DFSignal.interpolate();
-    DTSignal = DFSignal.IDFT();
-    //CFSignal = DTSignal.DTFT();
+    designer.targetLowPass(0.5 * PI);
+    designer.setLength(64);
+    designer.setTransZone({ 0.5 });
+    designer.frequencySampling();
 
-    App.setAutoRangeEnabled(false);
-    App.setRange(-100, 0);
-    CFSignal.plotAmplitude(App).saveBMP("../data/output_AF.bmp");
-    App.setAutoRangeEnabled(true);
-    CFSignal.plotPhase(App).saveBMP("../data/output_PF.bmp");
-    DTSignal.plotAmplitude(App).saveBMP("../data/output_AT.bmp");
-    DTSignal.plotPhase(App).saveBMP("../data/output_PT.bmp");
+    plot.setAutoRangeEnabled(false);
+    plot.setRange(-100, 0);
+    designer.frequencyDomain().plotAmplitude(plot).saveBMP("../data/output_AF.bmp");
+    plot.setAutoRangeEnabled(true);
+    designer.frequencyDomain().plotPhase(plot).saveBMP("../data/output_PF.bmp");
+    designer.timeDomain().plotAmplitude(plot).saveBMP("../data/output_AT.bmp");
+    designer.timeDomain().plotPhase(plot).saveBMP("../data/output_PT.bmp");
 }
