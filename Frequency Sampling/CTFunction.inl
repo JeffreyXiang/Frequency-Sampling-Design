@@ -28,16 +28,16 @@ void CTFunction<T>::fromFunction(std::function<T(double)> func, double xMin, dou
     }
 }
 
-template <typename T>
-DTFunction<T> CTFunction<T>::sample(double Fs)
-{
-    DTFunction<T> dt;
-    dt.setSamplingRate(Fs);
-    double idx;
-    for (int i = ceil(data->front().index * Fs); i <= floor(data->back().index * Fs); i++)
-    {
-        idx = i / Fs;
-        dt.append(getValue(idx));
-    }
-    return dt;
-}
+//template <typename T>
+//DTFunction<T> CTFunction<T>::sample(double Fs)
+//{
+//    DTFunction<T> dt;
+//    dt.setSamplingRate(Fs);
+//    double idx;
+//    for (int i = ceil(data->front().index * Fs); i <= floor(data->back().index * Fs); i++)
+//    {
+//        idx = i / Fs;
+//        dt.append(getValue(idx));
+//    }
+//    return dt;
+//}

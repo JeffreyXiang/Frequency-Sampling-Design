@@ -22,10 +22,10 @@ int main()
     CFDomain CFSignal;
     DFDomain DFSignal;
     CFSignal.fromFunction(func, 0, 2 * PI);
-    DFSignal = CFSignal.sample(128);
-    DFSignal.getData()[31] = 0.91;
-    DFSignal.getData()[32] = 0.5;
-    DFSignal.getData()[33] = 0.09;
+    DFSignal = CFSignal.sample(64);
+    DFSignal.getData()[15] = 0.9;
+    DFSignal.getData()[16] = 0.5;
+    DFSignal.getData()[17] = 0.1;
     DFSignal.linearPhase();
     CFSignal = DFSignal.interpolate();
     DTSignal = DFSignal.IDFT();
