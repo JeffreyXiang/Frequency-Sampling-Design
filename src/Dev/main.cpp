@@ -18,8 +18,13 @@ int main()
     
     designer.targetLowPass(0.5 * PI);
     designer.setLength(64);
-    designer.setTransZone({ 0.5 });
+    designer.setTransZone({ 0.9, 0.5, 0.1 });
     designer.frequencySampling();
+    designer.calcParameters();
+    designer.gradDescOptimize();
+
+    cout << "Overshot High: " << 20 * log10(abs(designer.getOvershotHigh().value)) << "dB" << endl
+         << "Overshot Low: " << 20 * log10(abs(designer.getOvershotLow().value)) << "dB" << endl;
 
     plot.setAutoRangeEnabled(false);
     plot.setRange(-100, 0);
