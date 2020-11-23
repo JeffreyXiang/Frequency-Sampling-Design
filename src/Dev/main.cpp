@@ -6,7 +6,7 @@
 int main()
 {
     Plot plot;
-    Font font("../Data/DengXian_ASCII_128x.bin", 128);
+    Font font("../font/DengXian_ASCII_128x.bin", 128);
     Designer designer;
 
     plot.setSize(1500, 1000);
@@ -18,7 +18,7 @@ int main()
     
     designer.targetLowPass(0.5 * PI);
     designer.setLength(64);
-    designer.setTransZone({ 0.9, 0.4, 0.1 });
+    designer.setTransZone({ 0.5 });
     designer.frequencySampling();
     designer.calcParameters();
     designer.gradDescOptimize();
