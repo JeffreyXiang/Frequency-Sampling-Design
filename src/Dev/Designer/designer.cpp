@@ -58,6 +58,55 @@ void Designer::calcParameters()
     }
 }
 
+#define LOSS_2
+
+double Designer::lossFunction(CFDomain& lcfd)
+{
+#ifdef LOSS_1
+    double max = 0;
+    int low = (transZoneEnd + 1) * lcfd.getData().size() / opdfd.getData().size();
+    int high = lcfd.getData().size() / 2;
+    for (size_t i = low; i <= high; i++)
+    {
+        double temp = abs(lcfd.getData()[i].value);
+        if (temp > max)
+            max = temp;
+    }
+    return max;
+#endif
+
+#ifdef LOSS_2
+    int high1 = opdfd.getData().size() / 2;
+    int low1 = transZoneEnd + 1;
+    std::vector<double> peaks;
+    peaks.resize(high1 - low1);
+    for (size_t i = low1; i < high1; i++)
+    {
+        int low2 = i * lcfd.getData().size() / opdfd.getData().size();
+        int high2 = (i + 1) * lcfd.getData().size() / opdfd.getData().size();
+        double max = 0;
+        for (size_t j = low2; j < high2; j++)
+        {
+            double temp = abs(lcfd.getData()[j].value);
+            if (temp > max)
+                max = temp;
+        }
+        peaks[i - low1] = max;
+    }
+
+    double avg = 0;
+    for (size_t i = 0; i < peaks.size(); i++)
+        avg += peaks[i];
+    avg /= peaks.size();
+
+    double var = 0;
+    for (size_t i = 0; i < peaks.size(); i++)
+        var += (peaks[i] - avg) * (peaks[i] - avg);
+    var /= peaks.size();
+    return var;
+#endif
+}
+
 //计算梯度
 std::vector<double>& Designer::calcGradient()
 {
@@ -72,13 +121,7 @@ std::vector<double>& Designer::calcGradient()
         ldfd.getData()[i] = transZoneValue[i - transZoneBegin];
     ldfd.linearPhase();
     lcfd = ldfd.interpolate();
-    int lim = (transZoneEnd + 1) * lcfd.getData().size() / ldfd.getData().size();
-    cen = 0;
-    for (size_t i = lim; i <= lcfd.getData().size() / 2; i++)
-    {
-        if (abs(lcfd.getData()[i].value) > cen)
-            cen = abs(lcfd.getData()[i].value);
-    }
+    cen = lossFunction(lcfd);
 
     //计算各轴阻带过冲变化
     for (size_t i = 0; i < grad.size(); i++)
@@ -89,12 +132,7 @@ std::vector<double>& Designer::calcGradient()
         ldfd.linearPhase();
 
         lcfd = ldfd.interpolate();
-        low = 0;
-        for (size_t i = lim; i <= lcfd.getData().size() / 2; i++)
-        {
-            if (abs(lcfd.getData()[i].value) > low)
-                low = abs(lcfd.getData()[i].value);
-        }
+        low = lossFunction(lcfd);
         grad[i] = (low - cen) * 1e6;
     }
 
@@ -113,11 +151,11 @@ void Designer::gradDescOptimize()
 {
     int count = 0;
     calcGradient();
-    while (count <= 100)
+    while (gradLength() > 1e-6)
     {
         for (size_t i = 0; i < grad.size(); i++)
         {
-            transZoneValue[i] -= 1e-2 * grad[i];
+            transZoneValue[i] -= 10 * grad[i];
             cout << transZoneValue[i] << "  ";
         }
         cout << endl;

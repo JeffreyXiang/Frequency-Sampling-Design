@@ -45,6 +45,7 @@ public:
     CFDomain::dataPoint getOvershotHigh() { return overshotHigh; }
     CFDomain::dataPoint getOvershotLow() { return overshotLow; }
 
+    double lossFunction(CFDomain& cfd);
     std::vector<double>& calcGradient();
     std::vector<double>& getGradient() { return grad; }
 

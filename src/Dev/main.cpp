@@ -18,7 +18,7 @@ int main()
     
     designer.targetLowPass(0.5 * PI);
     designer.setLength(64);
-    designer.setTransZone({ 0.5 });
+    designer.setTransZone({ 0.65, 0.25, 0.05 });
     designer.frequencySampling();
     designer.calcParameters();
     designer.gradDescOptimize();
