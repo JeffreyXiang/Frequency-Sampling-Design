@@ -2,10 +2,10 @@
 clc;clear;
 N=[15,33,51,64];i=4;            %选择时域点数                      
 wc=pi/2;                        %理想低通滤波器的截止频率
-S=4;                            %选择使用的窗函数
 n=0:N(i)-1;
-wrlist=[rectwin(N(i))';triang(N(i))';hann(N(i))';hamming(N(i))'];              
-wr=wrlist(S,:);                 %得到一个窗向量wr
+wrlist=[rectwin(N(i))';triang(N(i))';hann(N(i))';hamming(N(i))';blackman(N(i))';kaiser(N(i))'];
+dict=struct("rect",1,"triang",2,"hann",3,"hamming",4,"blackman",5,"kaiser",6);
+wr=wrlist(d.("kaiser"),:);      %得到一个窗向量wr
 hd=ideallp(wc,N(i));            %理想线性相位低通滤波器的单位冲激响应
 h=hd.*wr;                       %实际低通滤波器的单位冲激响应
 [Hw,w]=freqz(h,1,'whole',1024); %得到滤波器的频域特性         

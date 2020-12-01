@@ -6,3 +6,5 @@ n=0:(N-1);
 m=n-tau+epsilon;
 hd=sin(wc*m)./(pi*m);
 %plot(m,hd);
+end
+
