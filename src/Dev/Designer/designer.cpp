@@ -151,11 +151,11 @@ void Designer::gradDescOptimize()
 {
     int count = 0;
     calcGradient();
-    while (gradLength() > 1e-6)
+    while (gradLength() > 1e-8)
     {
         for (size_t i = 0; i < grad.size(); i++)
         {
-            transZoneValue[i] -= 10 * grad[i];
+            transZoneValue[i] -= 1e1 * grad[i];
             cout << transZoneValue[i] << "  ";
         }
         cout << endl;
